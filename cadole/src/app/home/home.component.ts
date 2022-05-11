@@ -13,10 +13,14 @@ export class HomeComponent implements OnInit {
   item: Item[] = [];
   searchKey: string = '';
 
+  onUpdateSearchKey(event: Event) {
+    this.searchKey = (<HTMLInputElement>event.target).value;
+  }
+
   constructor(private itemService: ItemService) { }
 
   ngOnInit(): void {
-    this.itemService.searchItem('black swan').subscribe(result => {
+    this.itemService.searchItem(this.searchKey).subscribe(result => {
       this.item = result.Search;
       console.log(this.item);
     });
