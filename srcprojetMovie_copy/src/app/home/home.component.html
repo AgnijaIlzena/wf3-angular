@@ -1,0 +1,14 @@
+
+<form class="d-flex">
+    <input (input)="onUpdateSearchKey($event)" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success" type="submit" (click)="ngOnInit()">Search</button>
+  </form>
+<div class="row justify-center">
+    <div class="col-6" *ngFor="let movie of movies">
+        <img [src]="movie.Poster" [alt]="movie.Title" class="col-4">
+        <p>{{ movie.Title }}</p>
+        <p>Année de sortie: {{ movie.Year }}</p>
+    </div>
+</div>
+
+

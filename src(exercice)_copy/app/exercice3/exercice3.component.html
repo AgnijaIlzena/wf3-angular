@@ -1,0 +1,12 @@
+<button class="btn btn-warning"
+(click)="onTogglePassword()">
+    Afficher/cacher
+</button>
+<p *ngIf="toggle">Mon mot de passe</p>
+<div 
+*ngFor="let item of items"
+[ngStyle]="{backgroundColor: item >= 5 ? 'red' : 'transparent'}"
+[ngClass]="{'white': item >= 5}">
+    <p> {{ item }} </p>
+</div>
+

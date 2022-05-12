@@ -1,0 +1,17 @@
+<input 
+type="text" 
+class="form-control"
+placeholder="Entrez un nom d'utilisateur"
+[(ngModel)]="userName"
+>
+
+<p class="mt-3">{{ userName }}</p>
+
+<button 
+class="btn btn-warning"
+[disabled]="userName === ''"
+(click)="userName = ''"
+>
+    RESET
+</button>
+
